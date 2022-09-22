@@ -1,0 +1,22 @@
+#Welcome to blind 75 leetcode series.
+#this is the leetcode solution for the two sum
+1. #the brute force solution to the problem(nested for loops)
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i,n in enumerate(nums):
+            for j,m in enumerate(nums):
+                if i !=j:
+                    if n+m==target:
+                        return[i,j] 
+2. #optimized soluton to the problem using a hashmap.
+class Solution:
+    def twoSum(self, nums: List[int], target:int) -> List[int]:
+         d={}
+	 for i,m in enumerate(nums):
+	     if target-m in d:
+		 return[i,d[target-m]] 
+	     else:
+		 d[m]=i
+the first solution has a runtime complexity of O(n^2) howver the hashmap has a runtime complexity of O(n).
+
